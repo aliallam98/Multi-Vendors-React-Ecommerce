@@ -1,4 +1,5 @@
 import Collection from "@/components/Collection";
+import SharedSectionMainHeadingAndCount from "@/components/SharedSectionMainHeadingAndCount";
 import { fetcher } from "@/lib/utils";
 import { useQuery } from "react-query";
 
@@ -16,13 +17,11 @@ const MainCategoryPage = () => {
   return (
     <section className="py-10 h-screen">
       <div className="container">
-        <div>
-          <h2 className="text-xl md:text-3xl lg:text-5xl">Shop By Category</h2>
-          <p className=" mt-4 text-muted-foreground">
-            {metaData.totalDocuments} Categories found
-          </p>
-        </div>
-
+      <SharedSectionMainHeadingAndCount
+        headingText="Categories"
+        count={metaData.totalDocuments}
+        />
+        
         <Collection
           emptyTitle=""
           subEmptyTitle=""

@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import Collection from "../Collection";
 import { fetcher } from "@/lib/utils";
+import SharedSectionMainHeadingAndCount from "../SharedSectionMainHeadingAndCount";
 
 const ProductsPage = () => {
   const { data } = useQuery({
@@ -18,12 +19,10 @@ const ProductsPage = () => {
   return (
     <section className="py-10 h-fit">
       <div className="container">
-        <div>
-          <h2 className="text-xl md:text-3xl lg:text-5xl">Shop By Products</h2>
-          <p className=" mt-4 text-muted-foreground">
-            {metaData.totalDocuments} Products found
-          </p>
-        </div>
+        <SharedSectionMainHeadingAndCount
+        headingText="Products"
+        count={metaData.totalDocuments}
+        />
 
         <Collection
           emptyTitle=""
